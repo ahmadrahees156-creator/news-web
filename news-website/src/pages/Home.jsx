@@ -22,38 +22,84 @@ function Home() {
 
       {/* Hero Section */}
 
-      <section className="bg-[#3b2f2f] text-[#f5f1e8] px-4 sm:px-6 py-14 sm:py-16">
+      <section className="bg-[#3b2f2f] text-[#f5f1e8] px-4 sm:px-6 py-10 sm:py-12">
 
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto">
 
-          <p className="text-[#c49a6c] font-semibold mb-3 tracking-widest text-sm">
-             STAY INFORMED
-          </p>
+          <div className="flex items-center justify-between border-b border-[#c49a6c]/30 pb-3 mb-8">
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5">
+            <p className="text-[#c49a6c] text-xs sm:text-sm font-bold tracking-[0.25em]">
+              NEWSROOM
+            </p>
 
-            Latest News,
-            <span className="text-[#c49a6c]">
-              {' '}All in One Place
+            <p className="text-[#d6c8b8] text-xs sm:text-sm">
+              TODAY'S EDITION
+            </p>
+
+          </div>
+
+          <div className="grid md:grid-cols-[1.4fr_1fr] gap-8 items-end">
+
+            <div>
+
+              <p className="text-[#c49a6c] text-sm font-semibold mb-3">
+                📰 STAY INFORMED
+              </p>
+
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight">
+
+                THE WORLD
+
+                <span className="block text-[#c49a6c]">
+                  IN FOCUS.
+                </span>
+
+              </h2>
+
+            </div>
+
+            <div className="md:border-l md:border-[#c49a6c]/30 md:pl-8">
+
+              <p className="text-[#d6c8b8] text-base sm:text-lg leading-7">
+                Latest stories, important events and
+                updates from around the world — all
+                in one place.
+              </p>
+
+              <div className="flex items-center gap-2 mt-5">
+
+                <span className="w-2 h-2 rounded-full bg-[#c49a6c]"></span>
+
+                <span className="text-xs font-semibold tracking-widest text-[#c49a6c]">
+                  LIVE NEWS FEED
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div className="flex items-center justify-between border-t border-[#c49a6c]/30 mt-8 pt-4">
+
+            <span className="text-xs sm:text-sm text-[#9f9183]">
+              STORIES • BUSINESS • TECHNOLOGY • SPORTS
             </span>
 
-          </h2>
+            <span className="hidden sm:block text-[#c49a6c] text-sm font-semibold">
+              24 / 7
+            </span>
 
-          <p className="text-[#d6c8b8] max-w-2xl mx-auto text-base sm:text-lg">
-
-            Discover the latest stories, trending topics and breaking news
-            from around the world.
-
-          </p>
+          </div>
 
         </div>
 
       </section>
 
 
-      {/* Search */}
+      {/* Search Section */}
 
-      <section className="max-w-6xl mx-auto px-4 -mt-7 relative">
+      <section className="max-w-6xl mx-auto px-4 -mt-7 relative z-10">
 
         <div className="bg-[#fffdf8] rounded-2xl shadow-lg p-4 border border-[#e5d8c8]">
 
@@ -112,9 +158,8 @@ function Home() {
                 : 'bg-[#fffdf8] text-[#5c4b3e] border border-[#dfd1c0] hover:bg-[#e9dfd2]'
             }`}
           >
-             All
+            🏠 All
           </button>
-
 
           <button
             onClick={() => handleCategory('business')}
@@ -124,21 +169,19 @@ function Home() {
                 : 'bg-[#fffdf8] text-[#5c4b3e] border border-[#dfd1c0] hover:bg-[#e9dfd2]'
             }`}
           >
-             Business
+            💰 Business
           </button>
 
-
           <button
-            onClick={() => handleCategory('tech')}
+            onClick={() => handleCategory('technology')}
             className={`px-4 sm:px-5 py-2.5 rounded-full font-medium transition ${
               category === 'technology'
                 ? 'bg-[#8b5e34] text-white'
                 : 'bg-[#fffdf8] text-[#5c4b3e] border border-[#dfd1c0] hover:bg-[#e9dfd2]'
             }`}
           >
-             Technology
+            💻 Technology
           </button>
-
 
           <button
             onClick={() => handleCategory('sports')}
@@ -148,9 +191,8 @@ function Home() {
                 : 'bg-[#fffdf8] text-[#5c4b3e] border border-[#dfd1c0] hover:bg-[#e9dfd2]'
             }`}
           >
-             Sports
+            ⚽ Sports
           </button>
-
 
           <button
             onClick={() => handleCategory('entertainment')}
@@ -160,7 +202,7 @@ function Home() {
                 : 'bg-[#fffdf8] text-[#5c4b3e] border border-[#dfd1c0] hover:bg-[#e9dfd2]'
             }`}
           >
-             Entertainment
+            🎬 Entertainment
           </button>
 
         </div>
@@ -181,17 +223,15 @@ function Home() {
             </p>
 
             <h2 className="text-2xl sm:text-3xl font-bold text-[#3b2f2f]">
-
               {query
                 ? `Results for "${query}"`
                 : 'Latest News'}
-
             </h2>
 
           </div>
 
           <span className="text-[#8b7a6a]">
-             News
+            📰 News
           </span>
 
         </div>
@@ -200,6 +240,126 @@ function Home() {
           search={query}
           category={category}
         />
+
+      </section>
+
+
+      {/* About Section */}
+
+      <section
+        id="about"
+        className="bg-[#fffdf8] border-t border-[#e5d8c8] px-4 sm:px-6 py-14 sm:py-16"
+      >
+
+        <div className="max-w-6xl mx-auto">
+
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+
+            <div>
+
+              <p className="text-[#8b5e34] font-semibold text-sm tracking-widest mb-3">
+                ABOUT NEWSROOM
+              </p>
+
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#3b2f2f] leading-tight">
+
+                News that keeps you
+
+                <span className="text-[#8b5e34]">
+                  {' '}informed.
+                </span>
+
+              </h2>
+
+              <p className="text-[#6b5b4d] leading-7 mt-5">
+                NewsRoom is a simple and responsive news platform designed
+                to bring the latest stories together in one place. Explore
+                different categories, search for specific topics and open
+                articles to read more.
+              </p>
+
+              <p className="text-[#6b5b4d] leading-7 mt-4">
+                The website uses React.js, Axios and a news API to fetch
+                and display current news in an easy-to-use interface.
+              </p>
+
+            </div>
+
+
+            <div className="grid grid-cols-2 gap-4">
+
+              <div className="bg-[#f5f1e8] rounded-2xl p-6 border border-[#e5d8c8]">
+
+                <p className="text-3xl mb-3">
+                  🔎
+                </p>
+
+                <h3 className="font-bold text-[#3b2f2f]">
+                  Easy Search
+                </h3>
+
+                <p className="text-sm text-[#8b7a6a] mt-2">
+                  Find news by searching for any topic.
+                </p>
+
+              </div>
+
+
+              <div className="bg-[#f5f1e8] rounded-2xl p-6 border border-[#e5d8c8]">
+
+                <p className="text-3xl mb-3">
+                  📰
+                </p>
+
+                <h3 className="font-bold text-[#3b2f2f]">
+                  Latest Stories
+                </h3>
+
+                <p className="text-sm text-[#8b7a6a] mt-2">
+                  Stay updated with fresh news.
+                </p>
+
+              </div>
+
+
+              <div className="bg-[#f5f1e8] rounded-2xl p-6 border border-[#e5d8c8]">
+
+                <p className="text-3xl mb-3">
+                  📱
+                </p>
+
+                <h3 className="font-bold text-[#3b2f2f]">
+                  Responsive
+                </h3>
+
+                <p className="text-sm text-[#8b7a6a] mt-2">
+                  Works across mobile, tablet and desktop.
+                </p>
+
+              </div>
+
+
+              <div className="bg-[#f5f1e8] rounded-2xl p-6 border border-[#e5d8c8]">
+
+                <p className="text-3xl mb-3">
+                  ⚡
+                </p>
+
+                <h3 className="font-bold text-[#3b2f2f]">
+                  Fast Experience
+                </h3>
+
+                <p className="text-sm text-[#8b7a6a] mt-2">
+                  Clean interface with quick navigation.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </section>
 
